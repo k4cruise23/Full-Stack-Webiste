@@ -57,7 +57,7 @@ class Auth extends Component {
                 <div className="about-container">
                     <div className="about">
                         <h2>About</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore autem impedit sunt voluptatibus, molestiae ea quidem nostrum quas esse ipsa asperiores corrupti eos provident quos perspiciatis, hic tempora? Officiis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore autem impedit sunt voluptatibus, molestiae ea quidem nostrum quas esse ipsa asperiores corrupti eos provident quos perspiciatis, hic tempora? Officiis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore autem impedit sunt voluptatibus, molestiae ea quidem nostrum quas esse ipsa asperiores corrupti.</p>
                     </div>
                 </div>
                 <div className="sign-up-container">
@@ -88,7 +88,7 @@ class Auth extends Component {
                     </div>
                     :
                     <div className="login-register-container">
-                        <input value={username} name="username" onChange={this.handleInput} placeholder="username" type="text" className="login-input"></input>
+                        <input value={username} name="username" onChange={this.handleInput} placeholder="Username" type="text" className="login-input"></input>
                         <input value={password} name="password" onChange={this.handleInput} placeholder="Password" type="password" className="login-input"></input>
                         <div className='btn-box'>
                             <button className="btn login" onClick={this.register}>Sign Up</button>

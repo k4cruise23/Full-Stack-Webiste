@@ -1,3 +1,3 @@
-INSERT INTO users (username, password, is_admin)
+INSERT INTO users (username, password, isAdmin)
 VALUES ($1, $2, false)
-RETURNING user_id, username, password;
+RETURNING *;

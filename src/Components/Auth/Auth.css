@@ -4,6 +4,7 @@
     flex-direction: column;
     height: 100vh;
     width: 100%;
+    background: linear-gradient(purple, white);
 }
 
 .about-container {
@@ -19,6 +20,7 @@
     border-radius: 5px;
     height: 40%;
     width: 70%;
+    background: white;
     box-shadow: 0 14px 28px 0 rgba(0,0,0,.25), 0 10px 10px 0 rgba(0,0,0,.26);
 }
 
@@ -40,6 +42,7 @@
     height: 20px;
     width: 140px;
     padding-left: 7px;
+    outline: none;
 }
 
 .btn-box {
@@ -54,12 +57,14 @@
 .btn-box > button {
     width: 90px;
     height: 35px;
-    border: 2px solid #494744;
+    border: none;
     color:#494744;
-    background-color: transparent;
+    background-color: purple;
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
+    outline: none;
+    color: white;
 }
 
 .login-register-container {
@@ -68,3 +73,10 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
+button:hover {
+    cursor: pointer;
+
+}
+
