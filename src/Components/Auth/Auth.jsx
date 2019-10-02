@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {addUser} from '../../ducks/reducer'
+import './Auth.css'
 
 class Auth extends Component {
     constructor(){
@@ -19,13 +20,15 @@ class Auth extends Component {
         this.setState({
             display: !this.state.display,
             username: '',
-            password: ''
+            password: '',
+            error: false,
+            errorMessage: ''
         })
     }
 
-    handleChange(e, key) {
+    handleInput = (e) => {
         this.setState({
-            [key]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -51,6 +54,12 @@ class Auth extends Component {
         const {username, password} = this.state
         return(
             <div className='auth-container'>
+                <div className="about-container">
+                    <div className="about">
+                        <h2>About</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore autem impedit sunt voluptatibus, molestiae ea quidem nostrum quas esse ipsa asperiores corrupti eos provident quos perspiciatis, hic tempora? Officiis.</p>
+                    </div>
+                </div>
                 <div className="sign-up-container">
                     <div className="logo">
                         <img src="future logo" alt=""/>
@@ -96,3 +105,5 @@ class Auth extends Component {
 
 
 }
+
+export default connect(null, {addUser})(Auth)

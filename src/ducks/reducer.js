@@ -24,7 +24,7 @@ export function selectPost(post) {
     }
 }
 
-export function updatePost(posts) {
+export function updatePosts(posts) {
     return {
         type: UPDATE_POSTS,
         payload: posts
@@ -54,10 +54,12 @@ export default function reducer(state = initialState, action) {
         case UPDATE_POSTS:
             return {...state, allPosts: action.payload}
         case SELECT_POST:
-            return {...state, allPosts: action.payload}
+            return {...state, currentPost: action.payload}
             case SEARCH_USERS:
                 return state
         default:
             return state
     }
 }
+
+

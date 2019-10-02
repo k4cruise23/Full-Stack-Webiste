@@ -12,14 +12,14 @@ app.use(express.json())
 
 //Auth Endpoints
 app.post('/auth/register', authCtrl.register)
-app.post('/auth/register', authCtrl.login)
+app.post('/auth/login', authCtrl.login)
 app.delete('/auth/logout', authCtrl.logout)
-app.get('/auth.user', authCtrl.getUser)
+app.get('/auth/user', authCtrl.getUser)
 
 //Post endpoints
 app.get('/api/post/getAll', postCtrl.getPosts)
-app.get('/api.post/:id', postCtrl.getPost)
-app.post('/api/posts/', postCtrl.addPost)
+app.get('/api/post/:id', postCtrl.getPost)
+app.post('/api/posts', postCtrl.addPost)
 app.delete('/api/post/:id', postCtrl.deletePost)
 
 app.use(session({

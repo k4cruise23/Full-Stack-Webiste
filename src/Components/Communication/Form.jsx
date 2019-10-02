@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import {connect} from 'react-dom'
+import {connect} from 'react-redux'
 import {updatePosts} from '../../ducks/reducer'
 
 class Form extends Component {
@@ -67,3 +67,4 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, {updatePosts})(Form)
+
