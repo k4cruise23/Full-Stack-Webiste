@@ -55,3 +55,13 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.icons {
+    padding: 8px;
+}

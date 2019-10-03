@@ -13,22 +13,22 @@ class Post extends Component{
         })
     }
 
-    render(){
-        const currentPost = this.props.post
-        return (
-            <div className="post-container">
-                <div className="article">
+    // render(){
+    //     const currentPost = this.props.post
+    //     return (
+    //         <div className="post-container">
+    //             <div className="article">
                     
-                {currentPost ?  <div className="post">
-                <img src={currentPost.image_url} alt="" className='post-image' />
-                <p className='post-item' >{currentPost.item}</p>
-                <p className='post-price' >{currentPost.price}</p>
-                <p className='post-content' >{currentPost.content}</p>
-                </div> : null }
-                </div>
-            </div>
-        )
-    }
+    //             {currentPost ?  <div className="post">
+    //             <img src={currentPost.image_url} alt="" className='post-image' />
+    //             <p className='post-item' >{currentPost.item}</p>
+    //             <p className='post-price' >{currentPost.price}</p>
+    //             <p className='post-content' >{currentPost.content}</p>
+    //             </div> : null }
+    //             </div>
+    //         </div>
+    //     )
+    // }
 }
 
 function mapStateToProps(state) {

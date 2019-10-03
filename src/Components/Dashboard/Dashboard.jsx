@@ -3,8 +3,9 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import * as Icon from 'react-feather'
 import {searchUsers, addUser} from '../../ducks/reducer'
-import PostListing from './PostListing'
+// import PostListing from './PostListing'
 import './Dashboard.css'
+import {Link} from 'react-router-dom'
 
 class Dashboard extends Component {
     constructor(){
@@ -56,9 +57,9 @@ class Dashboard extends Component {
     render(){
         // console.log(this.state)
         // let posts = []
-        const listedPosts = this.state.displayPosts.map((post, i) => {
-            return <PostListing key={i} post={post} />
-        })
+        // const listedPosts = this.state.displayPosts.map((post, i) => {
+        //     return <PostListing key={i} post={post} />
+        // })
 
         return(
             <div className="dashboard">
@@ -72,8 +73,21 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="posts-container">
-                    {listedPosts}
+                <div className='posts-container'>
+                    {this.state.displayPosts.length > 0 ? this.state.displayPosts.map(el=> (
+                        <div className='article-listing' >
+                            <div className="post">
+                                <img className='post-image' src={el.image_url} alt=""/>
+                                <p className="post-item">{el.item}</p>
+                                <p className="post-price">{el.price}</p>
+                                <p className="psot-content">{el.content}</p>
+                            <div className="buttons">
+                        <Link to='/chat' ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
+                        <Icon.CreditCard color='black' size='30' className='icons' />
+                            </div>
+                            </div>
+                        </div>
+                    )) : null}
                 </div>
             </div>
         )
