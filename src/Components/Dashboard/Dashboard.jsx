@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import * as Icon from 'react-feather'
 import {searchUsers, addUser} from '../../ducks/reducer'
 import PostListing from './PostListing'
+import './Dashboard.css'
 
 class Dashboard extends Component {
     constructor(){
@@ -17,13 +18,15 @@ class Dashboard extends Component {
 
     componentDidMount(){
         axios.get('/api/post/getAll').then(res => {
+            
             this.setState({displayPosts: res.data})
         })
     }
 
-    handleInput = (e, key) => {
+    handleInput = (e) => {
+        // console.log(e.target.value)
         this.setState({
-            [key]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -38,18 +41,22 @@ class Dashboard extends Component {
         })
     }
 
-    handleSearchInput = (e, key) => {
+    handleSearchInput = (e) => {
+        // console.log(e.target.value)
         this.setState({
-            [key]: e.target.value
+            [e.target.name]: e.target.value
         })
-        const filteredPosts = this.props.allPosts.filter(post => post.content.includes(e.target.value))
-        this.setState({displayPosts: filteredPosts})
+        const filteredPosts = this.props.allPosts.filter(post => post.item.includes(e.target.value))
+        // console.log(filteredPosts)
+        this.setState({
+            displayPosts: filteredPosts
+        })
     }
 
     render(){
-
-        let posts = []
-        const listedPosts = posts.map((post, i) => {
+        // console.log(this.state)
+        // let posts = []
+        const listedPosts = this.state.displayPosts.map((post, i) => {
             return <PostListing key={i} post={post} />
         })
 
@@ -59,9 +66,9 @@ class Dashboard extends Component {
                     <div className="top-nav">
                         <div className="search-feature">
                             <div className="search-container">
-                                <input type="text" value={this.state.search} className='searchbar' onChange={this.handleSearchInput} placeholder='Search...' /><Icon.Search color='gray' className='icon' size='20' />
-                            </div>
+                                <input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' /><Icon.Search color='gray' className='icon' size='20' />
                             <button className='reset' onClick={this.resetSearch} >X</button>
+                            </div>
                         </div>
                     </div>
                 </div>

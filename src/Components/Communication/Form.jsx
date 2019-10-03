@@ -24,7 +24,7 @@ class Form extends Component {
     submitPost = () => {
         const {image_url, item, price, content} = this.state
         const addPost = {...this.props.user, image_url, item, price, content}
-        axios.post('/api/post/add', addPost).then( res => {
+        axios.post('/api/post', addPost).then( res => {
             this.props.updatePosts(res.data)
             this.props.history.push('/dashboard')
         })
@@ -50,7 +50,7 @@ class Form extends Component {
                         <input type="text" onChange={this.handleChange} />
                     </div>
                     <div className="form-input">
-                        <label>Title</label>
+                        <label>Description</label>
                         <input type="text" onChange={this.handleChange} />
                     </div>
                     <div className="submit-btn">

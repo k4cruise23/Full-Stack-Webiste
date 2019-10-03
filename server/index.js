@@ -29,6 +29,7 @@ app.get('/api/post/getAll', postCtrl.getPosts)
 app.get('/api/post/:id', postCtrl.getPost)
 app.post('/api/posts', postCtrl.addPost)
 app.delete('/api/post/:id', postCtrl.deletePost)
+app.put('/api/post/:id', postCtrl.updatePost)
 
 
 

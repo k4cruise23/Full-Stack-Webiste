@@ -24,6 +24,12 @@ module.exports = {
         const {post_id} = req.params
         const remove = await db.delete_post([post_id])
         res.status(200).send(remove)
+    },
+    updatePost: async (req, res) => {
+        const db = req.app.get('db')
+        const {post_id} = req.params
+        const updatedPost = await db.update_post([post_id])
+        res.status(200).send(updatedPost)
     }
 }
 
