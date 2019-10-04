@@ -82,7 +82,7 @@ class Dashboard extends Component {
                                 <p className="post-price">{el.price}</p>
                                 <p className="psot-content">{el.content}</p>
                             <div className="buttons">
-                        <Link to='/chat' ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
+                        <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
                         <Icon.CreditCard color='black' size='30' className='icons' />
                             </div>
                             </div>

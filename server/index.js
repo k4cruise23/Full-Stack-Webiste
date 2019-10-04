@@ -60,8 +60,8 @@ io.on('connection', socket => {
     
     //room sockets
     socket.on('join room', data => {
-        console.log(`${data.room}`)
-        socket.to(data.room).broadcast.emit('room response', data)
+        socket.join(data.room)
+        console.log(`user joined room ${data.room}`)
     })
     
     socket.on('broadcast to room socket', data => {

@@ -50,7 +50,7 @@ export default class Room extends Component{
         this.setState({userTyping: false})
     }
 
-    updateMessage = data => {
+    updateMessages= data => {
         console.log(data)
         this.setState({
             messages: [...this.state.messages, {message: data.message, username: data.username}]
@@ -81,7 +81,7 @@ export default class Room extends Component{
 
     blast = () => {
         this.socket.emit(
-            `balst to ${this.props.room !== 'global' ? 'room' : 'global'}`,
+            `blast to ${this.props.room !== 'global' ? 'room' : 'global'}`,
             {
                 message: this.state.message,
                 username: this.state.username,

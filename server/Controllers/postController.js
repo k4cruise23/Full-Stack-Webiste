@@ -27,8 +27,8 @@ module.exports = {
     },
     updatePost: async (req, res) => {
         const db = req.app.get('db')
-        const {post_id} = req.params
-        const updatedPost = await db.update_post([post_id])
+        const {post_id, item, price, content, image_url} = req.body
+        const updatedPost = await db.update_post([post_id, item, price, content, image_url])
         res.status(200).send(updatedPost)
     }
 }

@@ -6,6 +6,7 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import Post from './Components/Post/Post'
 import Form from './Components/Communication/Form'
 import JoinRoom from './Components/Communication/JoinRoom'
+import Chatroom from './Components/Communication/Chatroom'
 
 export default (
     <Switch>
@@ -13,6 +14,7 @@ export default (
         <Route path='/dashboard' component={Dashboard}/>
         <Route path='/post/:postid' component={Post}/>
         <Route path='/new' component={Form} />
-        <Route path='/chat' component={JoinRoom} />
+        <Route path='/chat/:post_id' component={JoinRoom} />
+        <Route path='/room.post_id' component={Chatroom} />
     </Switch>
 )
