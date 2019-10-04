@@ -37,7 +37,7 @@ class Dashboard extends Component {
 
     resetSearch = () => {
         this.setState({
-            displayPosts: this.props.allPosts,
+            displayPosts: this.state.displayPosts,
             search: ''
         })
     }
@@ -47,7 +47,7 @@ class Dashboard extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        const filteredPosts = this.props.allPosts.filter(post => post.item.includes(e.target.value))
+        const filteredPosts = this.state.displayPosts.filter(post => post.content.includes(e.target.value))
         // console.log(filteredPosts)
         this.setState({
             displayPosts: filteredPosts
@@ -55,12 +55,6 @@ class Dashboard extends Component {
     }
 
     render(){
-        // console.log(this.state)
-        // let posts = []
-        // const listedPosts = this.state.displayPosts.map((post, i) => {
-        //     return <PostListing key={i} post={post} />
-        // })
-
         return(
             <div className="dashboard">
                 <div className="top-search-container">

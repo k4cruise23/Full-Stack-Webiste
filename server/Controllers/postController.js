@@ -14,9 +14,9 @@ module.exports = {
     },
 
     addPost: async (req, res) => {
-        let {post_id, item, image_url, content, price} = req.body
+        let {post_id, item, price, content, image_url} = req.body
         const db = req.app.get('db')
-        const addedPosts = await db.add_post([post_id,item,image_url, content, price])
+        const addedPosts = await db.add_post([post_id,item, price, content, image_url])
         return res.status(200).send(addedPosts)
     },
     deletePost: async (req, res) => {

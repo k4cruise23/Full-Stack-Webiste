@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import io from 'socket.io-client'
 
 
-export default class Room extends Component{
+export default class Chatroom extends Component{
     constructor(props){
         super(props)
 

@@ -15,6 +15,6 @@ export default (
         <Route path='/post/:postid' component={Post}/>
         <Route path='/new' component={Form} />
         <Route path='/chat/:post_id' component={JoinRoom} />
-        <Route path='/room.post_id' component={Chatroom} />
+        <Route path='/room/post_id' component={Chatroom} />
     </Switch>
 )

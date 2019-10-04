@@ -8,10 +8,10 @@ class Form extends Component {
         super()
 
         this.state = {
-            image_url: '',
             item: '',
             price: '',
-            content: ''
+            content: '',
+            image_url: ''
         }
     }
 
@@ -22,9 +22,9 @@ class Form extends Component {
     }
 
     submitPost = () => {
-        const {image_url, item, price, content} = this.state
-        const addPost = {...this.props.user, image_url, item, price, content}
-        axios.post('/api/post', addPost).then( res => {
+        const {item, price, content, image_url} = this.state
+        const addPost = {...this.props.user, item, price, content, image_url}
+        axios.post('/api/posts', addPost).then( res => {
             this.props.updatePosts(res.data)
             this.props.history.push('/dashboard')
         })
@@ -38,10 +38,6 @@ class Form extends Component {
                 </div>
                 <div className="form">
                     <div className="form-input">
-                        <label>Image URL</label>
-                        <input type="text" onChange={this.handleChange} />
-                    </div>
-                    <div className="form-input">
                         <label>Item</label>
                         <input type="text" onChange={this.handleChange} />
                     </div>
@@ -51,6 +47,10 @@ class Form extends Component {
                     </div>
                     <div className="form-input">
                         <label>Description</label>
+                        <input type="text" onChange={this.handleChange} />
+                    </div>
+                    <div className="form-input">
+                        <label>Image URL</label>
                         <input type="text" onChange={this.handleChange} />
                     </div>
                     <div className="submit-btn">
