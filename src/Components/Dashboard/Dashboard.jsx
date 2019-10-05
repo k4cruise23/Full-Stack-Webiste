@@ -42,6 +42,13 @@ class Dashboard extends Component {
         })
     }
 
+    deletePost = id => {
+        // console.log(id)
+        axios.delete(`/api/post/${id}`).then(res => {
+            this.setState({displayPosts: res.data})
+        })
+    }
+
     handleSearchInput = (e) => {
         // console.log(e.target.value)
         this.setState({
@@ -72,10 +79,15 @@ class Dashboard extends Component {
                         <div className='article-listing' >
                             <div className="post">
                                 <img className='post-image' src={el.image_url} alt=""/>
+                                <hr/>
                                 <p className="post-item">{el.item}</p>
+                                <hr/>
                                 <p className="post-price">{el.price}</p>
+                                <hr/>
                                 <p className="psot-content">{el.content}</p>
+                                <hr/>
                             <div className="buttons">
+                                <button onClick={() => this.deletePost(el.post_id)} >delete</button>
                         <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
                         <Icon.CreditCard color='black' size='30' className='icons' />
                             </div>
