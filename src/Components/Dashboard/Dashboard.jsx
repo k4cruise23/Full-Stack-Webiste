@@ -3,7 +3,6 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import * as Icon from 'react-feather'
 import {searchUsers, addUser} from '../../ducks/reducer'
-// import PostListing from './PostListing'
 import './Dashboard.css'
 import {Link} from 'react-router-dom'
 
@@ -22,6 +21,7 @@ class Dashboard extends Component {
         axios.get('/api/post/getAll').then(res => {
             
             this.setState({displayPosts: res.data})
+
         })
     }
 
@@ -56,18 +56,16 @@ class Dashboard extends Component {
         if(this.state.edit === false) return this.setState({edit: true, image_url: el.image_url, item: el.item, price: el.price, content: el.content})
         else if (cancel === true) return this.setState({edit: false})
         else { axios.put(`/api/post/${el.post_id}`, {item, price, content, image_url}).then(res => {
-            console.log(item, price, content, image_url, el.post_id)
+            // console.log(item, price, content, image_url, el.post_id)
                 this.setState({displayPosts: res.data, edit: false})})
         }
     }
 
     handleSearchInput = (e) => {
-        // console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
         const filteredPosts = this.state.displayPosts.filter(post => post.content.includes(e.target.value))
-        // console.log(filteredPosts)
         this.setState({
             displayPosts: filteredPosts
         })
@@ -79,6 +77,7 @@ class Dashboard extends Component {
     }
 
     render(){
+        console.log(this.props)
         return(
             <div className="dashboard">
                 <div className="top-search-container">
@@ -113,11 +112,15 @@ class Dashboard extends Component {
                             }
                                 <hr/>
                             <div className="buttons">
+                                {this.props.user.isadmin ? 
+                                <div className="adminButtons">
                                 <button onClick={() => this.deletePost(el.post_id)} >X</button>
                                 <button onClick={() => this.editPost( el, false)} >Edit</button>
                                 {this.state.edit ? 
                                 <button onClick={() => this.editPost( el, true)} >Cancel</button> :
                                 null}
+                                </div>
+                                : null}
                         <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
                         <Icon.CreditCard color='black' size='30' className='icons' />
                             </div>

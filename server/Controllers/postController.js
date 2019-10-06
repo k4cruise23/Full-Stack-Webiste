@@ -38,10 +38,3 @@ module.exports = {
     }
 }
 
-
-
-// module.exports = {
-//     getPost,
-//     getPosts,
-//     addPost
-// }
