@@ -13,7 +13,8 @@ class Dashboard extends Component {
 
         this.state = {
             search: '',
-            displayPosts: []
+            displayPosts: [],
+            edit: false
         }
     }
 
@@ -24,10 +25,10 @@ class Dashboard extends Component {
         })
     }
 
-    handleInput = (e) => {
-        // console.log(e.target.value)
+    handleInput = (e, key) => {
+        console.log('showing katie cool things', e.target.value, key)
         this.setState({
-            [e.target.name]: e.target.value
+            [key]: e.target.value
         })
     }
 
@@ -49,6 +50,17 @@ class Dashboard extends Component {
         })
     }
 
+    editPost = (el, cancel) => {
+        // console.log(this.state)
+        const {item, price, content, image_url} = this.state
+        if(this.state.edit === false) return this.setState({edit: true, image_url: el.image_url, item: el.item, price: el.price, content: el.content})
+        else if (cancel === true) return this.setState({edit: false})
+        else { axios.put(`/api/post/${el.post_id}`, {item, price, content, image_url}).then(res => {
+            console.log(item, price, content, image_url, el.post_id)
+                this.setState({displayPosts: res.data, edit: false})})
+        }
+    }
+
     handleSearchInput = (e) => {
         // console.log(e.target.value)
         this.setState({
@@ -59,6 +71,11 @@ class Dashboard extends Component {
         this.setState({
             displayPosts: filteredPosts
         })
+    }
+
+    toggle = () => {
+        this.setState(prevState => ({toggleEdit: !prevState.toggleEdit}))
+        this.editPost()
     }
 
     render(){
@@ -76,18 +93,31 @@ class Dashboard extends Component {
                 </div>
                 <div className='posts-container'>
                     {this.state.displayPosts.length > 0 ? this.state.displayPosts.map(el=> (
-                        <div className='article-listing' >
+                        
+                        <div key={el.post_id} className='article-listing' >
                             <div className="post">
+                                {this.state.edit ? <input className="post-image" type="text" value={this.state.image_url} onChange={(e) => this.handleInput(e, "image_url")} /> :
                                 <img className='post-image' src={el.image_url} alt=""/>
+                            }
                                 <hr/>
+                                {this.state.edit ? <input className='post-item' type='text' value={this.state.item} onChange={(e) => this.handleInput(e, "item")} /> :
                                 <p className="post-item">{el.item}</p>
+                            }
                                 <hr/>
+                                {this.state.edit ? <input className='post-price' type='text' value={this.state.price} onChange={(e) => this.handleInput(e, "price")} /> :
                                 <p className="post-price">{el.price}</p>
+                            }
                                 <hr/>
-                                <p className="psot-content">{el.content}</p>
+                                {this.state.edit ? <input className='post-content' type='text' value={this.state.content} onChange={(e) => this.handleInput(e, "content")} /> : 
+                                <p className="post-content">{el.content}</p>
+                            }
                                 <hr/>
                             <div className="buttons">
-                                <button onClick={() => this.deletePost(el.post_id)} >delete</button>
+                                <button onClick={() => this.deletePost(el.post_id)} >X</button>
+                                <button onClick={() => this.editPost( el, false)} >Edit</button>
+                                {this.state.edit ? 
+                                <button onClick={() => this.editPost( el, true)} >Cancel</button> :
+                                null}
                         <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
                         <Icon.CreditCard color='black' size='30' className='icons' />
                             </div>
