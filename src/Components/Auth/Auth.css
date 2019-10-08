@@ -4,12 +4,38 @@
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(rgb(140, 22, 209), white);
 }
 
+.header {
+    height: 50px;
+    width: 100%;
+    background-color: #00000088 !important;
+}
+
+
 .about-container {
-    height: 40%;
-    width: 70%;
+    height: 325px;
+    width: 275px;
+    color: white;
+    background: #00000088;
+    margin-top: 60px;
+}
+
+.about-auth-container {
+    background: url('https://article.images.consumerreports.org/f_auto/prod/content/dam/CRO%20Images%202019/Money/04April/CR-Money-Inlinehero-grocery-store-best-produce-0419');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    /* display: flex;
+    justify-content: space-around; */
+    /* opacity: .5; */
+}
+
+.landing-parent{
+    display: flex;
+    justify-content: space-around;
 }
 
 .sign-up-container {
@@ -18,10 +44,11 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 5px;
-    height: 40%;
-    width: 70%;
+    height: 275px;
+    width: 250px;
     background: white;
     box-shadow: 0 14px 28px 0 rgba(0,0,0,.25), 0 10px 10px 0 rgba(0,0,0,.26);
+    margin-top: 70px;
 }
 
 .img-logo {
@@ -80,3 +107,15 @@
     background: rgb(170, 88, 218)
 }
 
+.functions-container {
+    display: flex;
+    justify-content: space-around;
+    height: 40vh;
+    width: 100%
+}
+
+.info {
+    height: 275px;
+    width: 250px;
+    margin-top: 30px;
+}

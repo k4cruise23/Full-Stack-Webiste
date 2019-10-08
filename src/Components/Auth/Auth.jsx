@@ -3,6 +3,7 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {addUser} from '../../ducks/reducer'
 import './Auth.css'
+import * as Icon from 'react-feather'
 
 class Auth extends Component {
     constructor(){
@@ -54,6 +55,11 @@ class Auth extends Component {
         const {username, password} = this.state
         return(
             <div className='auth-container'>
+                <div className="about-auth-container">
+                <header className='header'>
+                    <h1>FARMER'S MARKIT <Icon.ArrowDown size='40' color='white' /></h1>
+                </header>
+                <div className="landing-parent">
                 <div className="about-container">
                     <div className="about">
                         <h2>About</h2>
@@ -61,9 +67,6 @@ class Auth extends Component {
                     </div>
                 </div>
                 <div className="sign-up-container">
-                    <div className="logo">
-                        <img src="future logo" alt=""/>
-                    </div>
                     <h1 className="title">Website title</h1>
                     <div className='sign-up-form'>
                     {this.state.error ?
@@ -98,7 +101,22 @@ class Auth extends Component {
                 }
                     </div>
                 </div>
-
+                </div>
+                </div>
+                <div className="functions-container">
+                    <div className="info">
+                        <Icon.MessageSquare color='purple' size='60' />
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iusto praesentium vero pariatur inventore molestiae facilis mollitia esse eius accusantium! Cum, corrupti amet impedit iure unde ipsam nulla. Quia, harum.</h4>
+                    </div>
+                    <div className="info">
+                        <Icon.CreditCard color='purple' size='60' />
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam labore fugit molestiae! In veniam nesciunt corporis voluptatum tenetur reprehenderit quam eligendi, sit vero enim, blanditiis tempore molestias natus neque dolor!</h4>
+                    </div>
+                    <div className="info">
+                        <Icon.Upload color='purple' size='60' />
+                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum doloribus exercitationem, voluptates officia et tempore rem nostrum quidem, obcaecati praesentium vitae quod esse animi enim libero, fuga aliquid odio?</h4>
+                    </div>
+                </div>
             </div>
         )
     }

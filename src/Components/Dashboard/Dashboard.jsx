@@ -84,7 +84,7 @@ class Dashboard extends Component {
                     <div className="top-nav">
                         <div className="search-feature">
                             <div className="search-container">
-                                <input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' /><Icon.Search color='gray' className='icon' size='20' />
+                            <Icon.Search color='gray' className='icon' size='20' /><input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' />
                             <button className='reset' onClick={this.resetSearch} >X</button>
                             </div>
                         </div>
@@ -95,27 +95,31 @@ class Dashboard extends Component {
                         
                         <div key={el.post_id} className='article-listing' >
                             <div className="post">
-                                {this.state.edit ? <input className="post-image" type="text" value={this.state.image_url} onChange={(e) => this.handleInput(e, "image_url")} /> :
-                                <img className='post-image' src={el.image_url} alt=""/>
-                            }
-                                <hr/>
+                                <div className="item">
                                 {this.state.edit ? <input className='post-item' type='text' value={this.state.item} onChange={(e) => this.handleInput(e, "item")} /> :
                                 <p className="post-item">{el.item}</p>
                             }
-                                <hr/>
+                                </div>
+                                <div className="image">
+                                {this.state.edit ? <input className="post-image" type="text" value={this.state.image_url} onChange={(e) => this.handleInput(e, "image_url")} /> :
+                                <img className='post-image' src={el.image_url} alt=""/>
+                            }
+                                </div>
+                                <div className="price">
                                 {this.state.edit ? <input className='post-price' type='text' value={this.state.price} onChange={(e) => this.handleInput(e, "price")} /> :
                                 <p className="post-price">{el.price}</p>
                             }
-                                <hr/>
+                                </div>
+                                <div className="content">
                                 {this.state.edit ? <input className='post-content' type='text' value={this.state.content} onChange={(e) => this.handleInput(e, "content")} /> : 
                                 <p className="post-content">{el.content}</p>
                             }
-                                <hr/>
+                                </div>
                             <div className="buttons">
                                 {this.props.user.isadmin ? 
                                 <div className="adminButtons">
-                                <button onClick={() => this.deletePost(el.post_id)} >X</button>
-                                <button onClick={() => this.editPost( el, false)} >Edit</button>
+                                <Icon.XSquare onClick={() => this.deletePost(el.post_id)} color='black' size='30' className='icons' />
+                                <Icon.Edit onClick={() => this.editPost( el, false)} color='black' size='30' className='icons' />
                                 {this.state.edit ? 
                                 <button onClick={() => this.editPost( el, true)} >Cancel</button> :
                                 null}
