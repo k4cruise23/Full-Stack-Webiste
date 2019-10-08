@@ -81,7 +81,7 @@ export default class Chatroom extends Component{
 
     blast = () => {
         this.socket.emit(
-            `blast to ${this.props.room !== 'global' ? 'room' : 'global'}`,
+            `blast to room socket`,
             {
                 message: this.state.message,
                 username: this.state.username,
@@ -97,16 +97,17 @@ export default class Chatroom extends Component{
                 <p>{message.message}</p>
             </div>
         ))
+        // console.log(this.state)
         return (
             <div className="chatroom">
-                <h2>Room: {this.props.match.params.post_id}</h2>
+                <h2>Room: {this.props.room}</h2>
                 <div className="messages">
                     {messages}
                     {this.state.userTyping && (
                         <h4 className="typing-messages">User Typing</h4>
-                    )}
+                        )}
                 </div>
-                <div className="inputs">
+                {/* <div className="inputs">
                     {this.state.usernameSet ? (
                         <>
                         <h2 className="welcome-message">
@@ -120,12 +121,14 @@ export default class Chatroom extends Component{
                         </div>
                         </>
 
-                    ): (
+                    ) : (
                         <div className="username-set">
                             <input type="text" name='username' placeholder='Enter Username' value={this.state.username} onChange={this.handleChange} />
                         </div>
                     )}
-                </div>
+                </div> */}
+                <input type="text"  onChange={e => this.handleChange(e) } name={'message'} value={this.state.message} />
+                <button onClick={() => this.blast()} > Send</button>
             </div>
         )
     }

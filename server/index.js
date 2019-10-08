@@ -75,7 +75,7 @@ io.on('connection', socket => {
     })
     
     socket.on('blast to room socket', data => {
-        console.log(`blast to room ${data.room}`)
+        console.log(`blast to room ${data.message}`)
         io.to(data.room).emit('room response', data)
     })
 })
