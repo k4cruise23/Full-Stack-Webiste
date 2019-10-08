@@ -26,9 +26,15 @@ class Nav extends Component{
                         <div className="header">
                         <h1>Farmer's Markit <Icon.ArrowDown size='40' color='white' /> </h1>
                         <div className="links">
-                        <Link to='/dashboard' ><Icon.Home color='white' className='icon' size='30' /></Link>
-                        <Link to='/new' ><Icon.Plus color='white' className='icon' size='30' /></Link>
-                        <Link to='/' ><Icon.Power color='white' className='icon' size='30' /></Link>
+                            <div className="link">
+                                <Link to='/dashboard' ><Icon.Home color='white' className='icon' size='30' /></Link>
+                            </div>
+                            <div className="link">
+                                <Link to='/new' ><Icon.Plus color='white' className='icon' size='30' /></Link>
+                            </div>
+                            <div className="link">
+                                <Link to='/' ><Icon.Power color='white' className='icon' size='30' /></Link>
+                            </div>
                         </div>
                         </div>
                         <div className="profile-name">

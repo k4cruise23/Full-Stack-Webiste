@@ -1,0 +1,50 @@
+.form {
+    min-height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+}
+.form-background {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:  center;
+    background: #FAFAFA
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-img {
+    min-height: 250px;
+    width: 350px;
+    border: 1px solid black;
+}
+
+input {
+    width: 300px;
+}
+
+.form-input > p {
+    margin: 0;
+    font-size: .75rem;
+}
+
+.addpost {
+    width: 90px;
+    height: 30px;
+    border: none;
+    color:#494744;
+    background-image: -webkit-radial-gradient(50% -46%, circle, #737373, #403d39);
+    background-image: -o-radial-gradient(50% -46%, circle, #737373, #403d39);
+    background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
+    font-size: 16px;
+    outline: none;
+    color: white;
+}

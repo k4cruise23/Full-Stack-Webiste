@@ -8,4 +8,24 @@
 
 .links {
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    padding: 10px;
+}
+
+.nav-items {
+    background: #FAFAFA;
+    margin: 0;
+}
+
+.profile-name {
+    margin: 0;
+    height: 10px;
+}
+
+.header > h1 {
+    padding-left: 10px;
 }

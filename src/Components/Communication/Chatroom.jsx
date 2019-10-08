@@ -99,7 +99,7 @@ export default class Chatroom extends Component{
         ))
         return (
             <div className="chatroom">
-                <h2>Room: {this.props.room}</h2>
+                <h2>Room: {this.props.match.params.post_id}</h2>
                 <div className="messages">
                     {messages}
                     {this.state.userTyping && (

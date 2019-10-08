@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {updatePosts} from '../../ducks/reducer'
+import './Form.css'
 
 class Form extends Component {
     constructor(){
@@ -38,6 +39,7 @@ class Form extends Component {
                     <h3 className='new-post'>NEW POST</h3>
                 </div>
                 <div className="form">
+                    <img className='form-img' src={this.state.image_url} alt=""/>
                     <div className="form-input">
                         <label>Item</label>
                         <input type="text" onChange={e => this.handleChange(e, 'item')} value={this.state.item} />
@@ -53,9 +55,10 @@ class Form extends Component {
                     <div className="form-input">
                         <label>Image URL</label>
                         <input type="text" onChange={e => this.handleChange(e, 'image_url')} value={this.state.image_url} />
+                        <p>* Copy and paste your image's URL</p>
                     </div>
                     <div className="submit-btn">
-                        <button onClick={this.submitPost} >Post</button>
+                        <button className='addpost' onClick={this.submitPost} >Add Post</button>
                     </div>
                 </div>
             </div>

@@ -31,8 +31,8 @@ module.exports = {
         const db = req.app.get('db')
         const {item, price, content, image_url} = req.body
         const {id} = req.params
-        console.log(req.params)
-        console.log(req.body)
+        // console.log(req.params)
+        // console.log(req.body)
         const updatedPost = await db.update_post([id, item, price, content, image_url])
         res.status(200).send(updatedPost)
     }

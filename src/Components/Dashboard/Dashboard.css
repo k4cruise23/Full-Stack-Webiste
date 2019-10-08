@@ -24,10 +24,9 @@
 }
 
 .searchbar {
-    border: 1px solid black;
+    border: 1px solid #00000030;
     height: 20px;
-    width: 150px;
-    border-radius: 15px;
+    width: 200px;
     outline: none;
     margin: 5px;
 }
@@ -44,14 +43,14 @@
 }
 
 .post-image {
-    height: 400px;
+    height: auto;
     width: 600px;
 }
 
 .post {
-    height: 700px;
+    min-height: 500px;
     width: 600px;
-    border: 1px solid grey;
+    border: 1px solid #00000030;
     opacity: 1;
     background: white;
 }
@@ -83,9 +82,12 @@
     display: flex;
     justify-content: flex-start;
     margin-left: 10px;
+    color: green;
 }
 
 .content {
     margin-left: 10px;
     text-align: start;
+    height: 70px;
+    overflow: scroll;
 }

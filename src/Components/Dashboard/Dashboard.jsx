@@ -77,14 +77,14 @@ class Dashboard extends Component {
     }
 
     render(){
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <div className="dashboard">
                 <div className="top-search-container">
                     <div className="top-nav">
                         <div className="search-feature">
                             <div className="search-container">
-                            <Icon.Search color='gray' className='icon' size='20' /><input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' />
+                            <input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' />
                             <button className='reset' onClick={this.resetSearch} >X</button>
                             </div>
                         </div>

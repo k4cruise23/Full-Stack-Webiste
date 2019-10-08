@@ -18,7 +18,8 @@
     width: 275px;
     color: white;
     background: #00000088;
-    margin-top: 60px;
+    margin-top: 40px;
+    padding: 5px;
 }
 
 .about-auth-container {
@@ -43,12 +44,12 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-radius: 5px;
     height: 275px;
     width: 250px;
     background: white;
     box-shadow: 0 14px 28px 0 rgba(0,0,0,.25), 0 10px 10px 0 rgba(0,0,0,.26);
     margin-top: 70px;
+    background: #FAFAFA;
 }
 
 .img-logo {
@@ -86,12 +87,13 @@
     height: 35px;
     border: none;
     color:#494744;
-    background-color:rgb(140, 22, 209);
-    border-radius: 10px;
+    background-image: -webkit-radial-gradient(50% -46%, circle, #737373, #403d39);
+    background-image: -o-radial-gradient(50% -46%, circle, #737373, #403d39);
+    background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
     font-size: 16px;
-    cursor: pointer;
     outline: none;
     color: white;
+
 }
 
 .login-register-container {
@@ -104,7 +106,6 @@
 
 .btn-box > button:hover {
     cursor: pointer;
-    background: rgb(170, 88, 218)
 }
 
 .functions-container {
@@ -118,4 +119,7 @@
     height: 275px;
     width: 250px;
     margin-top: 30px;
+    color: #403d39;
 }
+
+
