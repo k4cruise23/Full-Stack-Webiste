@@ -7,6 +7,7 @@ import Post from './Components/Post/Post'
 import Form from './Components/Communication/Form'
 import JoinRoom from './Components/Communication/JoinRoom'
 import Chatroom from './Components/Communication/Chatroom'
+import Payment from './Components/Communication/Payment'
 
 export default (
     <Switch>
@@ -16,5 +17,6 @@ export default (
         <Route path='/new' component={Form} />
         <Route path='/chat/:post_id' component={JoinRoom} />
         <Route path='/room/post_id' component={Chatroom} />
+        <Route path='/pay' component={Payment} />
     </Switch>
 )

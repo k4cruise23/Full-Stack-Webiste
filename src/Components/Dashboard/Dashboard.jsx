@@ -126,7 +126,7 @@ class Dashboard extends Component {
                                 </div>
                                 : null}
                         <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
-                        <Icon.CreditCard color='black' size='30' className='icons' />
+                        <Link to={'/pay'}><Icon.CreditCard color='black' size='30' className='icons' /></Link>
                             </div>
                             </div>
                         </div>

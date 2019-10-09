@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import io from 'socket.io-client'
+import './Chat.css'
 
 
 export default class Chatroom extends Component{
@@ -97,38 +98,21 @@ export default class Chatroom extends Component{
                 <p>{message.message}</p>
             </div>
         ))
-        // console.log(this.state)
         return (
+            <div className="chatroom-parent">
             <div className="chatroom">
                 <h2>Room: {this.props.room}</h2>
-                <div className="messages">
+                <div className="messages-container">
                     {messages}
                     {this.state.userTyping && (
                         <h4 className="typing-messages">User Typing</h4>
                         )}
                 </div>
-                {/* <div className="inputs">
-                    {this.state.usernameSet ? (
-                        <>
-                        <h2 className="welcome-message">
-                            Welcome, {this.state.username}
-                        </h2>
-                        <input type="text" name='message' placeholder='Type Message Here' value={this.state.message} onChange={this.handleChange} />
-                        <div className='buttons' >
-                            <button onClick={this.broadcast} >Broadcast</button>
-                            <button onClick={this.emit} >Emit</button>
-                            <button onClick={this.blast} >Blast</button>
-                        </div>
-                        </>
-
-                    ) : (
-                        <div className="username-set">
-                            <input type="text" name='username' placeholder='Enter Username' value={this.state.username} onChange={this.handleChange} />
-                        </div>
-                    )}
-                </div> */}
-                <input type="text"  onChange={e => this.handleChange(e) } name={'message'} value={this.state.message} />
+                <div className="send-message">
+                <input type="text"  onChange={e => this.handleChange(e) } name={'message'} value={this.state.message} placeholder='Type message here' />
                 <button onClick={() => this.blast()} > Send</button>
+                </div>
+            </div>
             </div>
         )
     }

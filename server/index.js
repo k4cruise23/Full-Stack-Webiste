@@ -94,7 +94,7 @@ app.post('/api/posts', postCtrl.addPost)
 app.delete('/api/post/:id', postCtrl.deletePost)
 app.put('/api/post/:id', postCtrl.updatePost)
 
-
+app.post('/api/payment', authCtrl.pay)
 
 
 massive(CONNECTION_STRING).then(db => {
