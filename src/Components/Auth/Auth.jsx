@@ -56,7 +56,7 @@ class Auth extends Component {
         return(
             <div className='auth-container'>
                 <div className="about-auth-container">
-                <header className='header'>
+                <header className='auth-header'>
                     <h1>FARMER'S MARKIT <Icon.ArrowDown size='40' color='white' /></h1>
                 </header>
                 <div className="landing-parent">
@@ -82,8 +82,8 @@ class Auth extends Component {
                         :
                         "login-register-container"
                     }>
-                        <input value={username} name="username" onChange={this.handleInput} placeholder="Username" type="text" className="login-input"></input>
-                        <input value={password} name="password" onChange={this.handleInput} placeholder="Password" type="password" className="login-input"></input>
+                        <input autoComplete="off" value={username} name="username" onChange={this.handleInput} placeholder="Username" type="text" className="login-input"></input>
+                        <input autoComplete="off" value={password} name="password" onChange={this.handleInput} placeholder="Password" type="password" className="login-input"></input>
                         <div className='btn-box'>
                             <button className="btn login" onClick={this.login}>Login</button>
                             <button className="btn register" onClick={this.changeDisplay}>Register</button>
@@ -91,8 +91,8 @@ class Auth extends Component {
                     </div>
                     :
                     <div className="login-register-container">
-                        <input value={username} name="username" onChange={this.handleInput} placeholder="Username" type="text" className="login-input"></input>
-                        <input value={password} name="password" onChange={this.handleInput} placeholder="Password" type="password" className="login-input"></input>
+                        <input autoComplete="off" value={username} name="username" onChange={this.handleInput} placeholder="Username" type="text" className="login-input"></input>
+                        <input autoComplete="off" value={password} name="password" onChange={this.handleInput} placeholder="Password" type="password" className="login-input"></input>
                         <div className='btn-box'>
                             <button className="btn login" onClick={this.register}>Sign Up</button>
                             <button className="btn register" onClick={this.changeDisplay}>Cancel</button>

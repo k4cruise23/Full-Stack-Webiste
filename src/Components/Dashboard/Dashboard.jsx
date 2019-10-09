@@ -118,15 +118,15 @@ class Dashboard extends Component {
                             <div className="buttons">
                                 {this.props.user.isadmin ? 
                                 <div className="adminButtons">
-                                <Icon.XSquare onClick={() => this.deletePost(el.post_id)} color='black' size='30' className='icons' />
-                                <Icon.Edit onClick={() => this.editPost( el, false)} color='black' size='30' className='icons' />
+                                <Icon.XSquare onClick={() => this.deletePost(el.post_id)} color='black' size='40' className='icons' />
+                                <Icon.Edit onClick={() => this.editPost( el, false)} color='black' size='40' className='icons' />
                                 {this.state.edit ? 
                                 <button onClick={() => this.editPost( el, true)} >Cancel</button> :
                                 null}
                                 </div>
                                 : null}
-                        <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='30' className='icons' /></Link>
-                        <Link to={'/pay'}><Icon.CreditCard color='black' size='30' className='icons' /></Link>
+                        <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='40' className='icons' /></Link>
+                        <Link to={'/pay'}><Icon.CreditCard color='black' size='40' className='icons' /></Link>
                             </div>
                             </div>
                         </div>

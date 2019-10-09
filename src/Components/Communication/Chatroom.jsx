@@ -92,6 +92,7 @@ export default class Chatroom extends Component{
     }
 
     render(){
+        console.log(this.props.reduxState)
         const messages = this.state.messages.map((message, i) => (
             <div key={i} className={message.username === this.state.username ? 'my-message' : 'message'} >
                 <h5>{message.username}</h5>

@@ -7,13 +7,16 @@
     align-items: center;
     flex-direction: column;
     background: white;
+    margin-bottom: 30px;
 }
 .form-background {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items:  center;
-    background: #FAFAFA
+    background: #FAFAFA;
+    height: 100vh;
+    width: 100vw;
 }
 
 .form-input {
@@ -47,4 +50,20 @@ input {
     font-size: 16px;
     outline: none;
     color: white;
+
+}
+
+.form-container{
+    padding: 5px;
+}
+
+@media (max-width: 600px) {
+    .form {
+        min-height: 400px;
+        width: 400px;
+    }
+    .form-img {
+        min-height: 200px;
+        width: 300px;
+    }
 }
