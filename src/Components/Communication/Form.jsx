@@ -55,8 +55,8 @@ class Form extends Component {
                     <div className="form-input">
                         <label>Image URL</label>
                         <input type="text" onChange={e => this.handleChange(e, 'image_url')} value={this.state.image_url} />
-                        <p>* Copy and paste your image's URL</p>
                     </div>
+                        <p className='instruction'>* Copy and paste your image's URL</p>
                     <div className="submit-btn">
                         <button className='addpost' onClick={this.submitPost} >Add Post</button>
                     </div>

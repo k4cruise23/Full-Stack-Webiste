@@ -39,7 +39,7 @@ export default class App extends Component {
     }
 
     render(){
-        console.log(this.props)
+        
         // const rooms = this.state.rooms.map(room => <Chatroom room={room}/>)
         return(
             <div className="joinroom">

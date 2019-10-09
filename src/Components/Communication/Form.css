@@ -32,6 +32,8 @@
 
 input {
     width: 300px;
+    outline: none;
+    border: 1px solid lightgray;
 }
 
 .form-input > p {
@@ -57,6 +59,10 @@ input {
     padding: 5px;
 }
 
+.instruction {
+    margin: 5px;
+}
+
 @media (max-width: 600px) {
     .form {
         min-height: 400px;
@@ -65,5 +71,27 @@ input {
     .form-img {
         min-height: 200px;
         width: 300px;
+    }
+}
+
+@media (max-width: 420px) {
+    .form {
+        min-height: 350px;
+        width: 350px;
+    }
+    .form-img {
+        min-height: 200px;
+        width: 250px;
+    }
+    input {
+        width: 150px;
+    }
+    .instruction {
+        font-size: .7rem;
+    }
+    .addpost {
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
     }
 }

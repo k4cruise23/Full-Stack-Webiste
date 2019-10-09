@@ -57,13 +57,15 @@ class Auth extends Component {
             <div className='auth-container'>
                 <div className="about-auth-container">
                 <header className='auth-header'>
-                    <h1>FARMER'S MARKIT <Icon.ArrowDown size='40' color='white' /></h1>
+                    <h1>FARMER'S MARKIT </h1>
+                    <div className="header-icon"><Icon.ArrowDown size='40' color='white' /></div>
                 </header>
                 <div className="landing-parent">
                 <div className="about-container">
                     <div className="about">
-                        <h2>About</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore autem impedit sunt voluptatibus, molestiae ea quidem nostrum quas esse ipsa asperiores corrupti eos provident quos perspiciatis, hic tempora? Officiis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores dolore autem impedit sunt voluptatibus, molestiae ea quidem nostrum quas esse ipsa asperiores corrupti.</p>
+                        <h2>Why a virtual farmer's market?</h2>
+                        <p>Farmer's markets normally cater to farmers who grow produce specifically for others. This is a place where you can buy, sell, or give away any left over produce from a season's harvest.</p>
+                        <p>Less waste, money made, happy people.</p>
                     </div>
                 </div>
                 <div className="sign-up-container">
@@ -105,16 +107,19 @@ class Auth extends Component {
                 </div>
                 <div className="functions-container">
                     <div className="info">
-                        <Icon.MessageSquare color='black' size='50' />
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure iusto praesentium vero pariatur inventore molestiae facilis mollitia esse eius accusantium! Cum, corrupti amet impedit iure unde ipsam nulla. Quia, harum.</h5>
+                        <Icon.MessageSquare color='black' size='40' />
+                        <h5 className="info-title">Online chat</h5>
+                        <h5>Contact users directly when interested in a post. Discuss the product, negotiate prices, set a meeting, etc.</h5>
                     </div>
                     <div className="info">
-                        <Icon.CreditCard color='black' size='50' />
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam labore fugit molestiae! In veniam nesciunt corporis voluptatum tenetur reprehenderit quam eligendi, sit vero enim, blanditiis tempore molestias natus neque dolor!</h5>
+                        <Icon.CreditCard color='black' size='40' />
+                        <h5 className="info-title">Pay with card</h5>
+                        <h5>Make an online payment without the stress of gathering your change.</h5>
                     </div>
                     <div className="info">
-                        <Icon.Upload color='black' size='50' />
-                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum doloribus exercitationem, voluptates officia et tempore rem nostrum quidem, obcaecati praesentium vitae quod esse animi enim libero, fuga aliquid odio?</h5>
+                        <Icon.DollarSign color='black' size='40' />
+                        <h5 className="info-title">Everyone saves</h5>
+                        <h5>Don't worry about having to throw away left over produce, and vice versa, don't over-pay for fresh produce at a grocery store.</h5>
                     </div>
                 </div>
             </div>

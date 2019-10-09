@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha&display=swap');
+
 .auth-container{
     display: flex;
     align-items: center;
@@ -10,7 +12,17 @@
     height: 50px;
     width: 100%;
     background-color: #00000088;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.auth-header > h1 {
+    color: white;
+    font-family: 'Neucha', cursive;
+    letter-spacing: 2px;
+}
+
 
 .about-container {
     height: 325px;
@@ -19,6 +31,7 @@
     background: #00000088;
     margin-top: 40px;
     padding: 5px;
+    text-align: start;
 }
 
 .about-auth-container {
@@ -115,6 +128,16 @@
     padding: 0px 25px;
 }
 
+.info-title {
+    font-size: 1.2rem;
+    padding: 10px;
+    font-weight: bold !important;
+}
+
+.info > h5 {
+    font-weight: 1;
+}
+
 @media (max-width: 700px){
     .about-container {
         height: 250px;
@@ -151,7 +174,8 @@
     .about-container {
         height: 200px;
         width: 250px;
-        margin: 10px
+        margin: 10px;
+        text-align: center;
     }
     .sign-up-container {
         height: 200px;
