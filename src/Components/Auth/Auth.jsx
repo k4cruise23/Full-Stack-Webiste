@@ -69,7 +69,7 @@ class Auth extends Component {
                 <div className="about-auth-container">
                 <header className='auth-header'>
                     <h1>FARMER'S MARKIT </h1>
-                    <div className="header-icon"><Icon.ArrowDown size='40' color='white' /></div>
+                    <div className="header-icon"><Icon.ArrowDown size='35' color='white' /></div>
                 </header>
                 <div className="landing-parent">
                 <div className="about-container">

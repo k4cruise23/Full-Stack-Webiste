@@ -13,7 +13,7 @@
     width: 100%;
     background-color: #00000088;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -21,16 +21,32 @@
     color: white;
     font-family: 'Neucha', cursive;
     letter-spacing: 2px;
+    margin-left: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    height: auto;
+    width: 150px;
 }
 
 .about-container {
-    height: 275px;
-    width: 250px;
+    height: 325px;
+    width: 300px;
     color: white;
     background: #00000088;
     margin-top: 40px;
     text-align: start;
     padding: 5px;
+
+}
+
+.about > h2 {
+    margin-top: 20px;
+}
+
+.about > p {
+    margin-top: 30px;
 }
 
 .about-auth-container {
@@ -52,8 +68,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 275px;
-    width: 250px;
+    height: 325px;
+    width: 300px;
     background: white;
     box-shadow: 0 14px 28px 0 rgba(0,0,0,.25), 0 10px 10px 0 rgba(0,0,0,.26);
     margin-top: 40px;
@@ -71,8 +87,8 @@
 .login-input{
     margin: 10px;
     border: none;
-    height: 20px;
-    width: 140px;
+    height: 25px;
+    width: 150px;
     padding-left: 7px;
     outline: none;
 }
@@ -122,19 +138,50 @@
 .info {
     height: 275px;
     width: 250px;
-    margin-top: 30px;
+    margin: 30px 50px;
     color: #403d39;
     padding: 0px 25px;
 }
 
 .info-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     padding: 10px;
     font-weight: bold !important;
 }
 
 .info > h5 {
     font-weight: 1;
+    font-size: 1rem;
+}
+
+@media (max-width: 1000px){
+    .info {
+        font-size: 1.2rem;
+        padding: 10px;
+        font-weight: bold !important;
+        margin: 0
+    }
+    .info-title{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 920px){
+    .about-container {
+        height: 275px;
+        width: 250px;
+    }
+    .sign-up-container {
+        height: 275px;
+        width: 250px;
+    }
+    .about > h2 {
+        margin-top: 12px;
+    }
+    
+    .about > p {
+        margin-top: 22px;
+    }
 }
 
 @media (max-width: 700px){
@@ -159,7 +206,7 @@
     }
 }
 
-@media (max-width: 420px){
+@media (max-width: 470px){
     .about-auth-container{
         height: 80vh;
         padding-bottom: 10px;
@@ -191,12 +238,30 @@
     .header > h1 {
         font-size: 1.5rem;
     }
-    .auth-header{
-       
-    }
+
     .info {
         height: 175px;
         width: 250px;
+        margin-top: 30px;
+    }
+
+    .about > h2 {
+        margin-top: 10px;
+    }
+    
+    .about > p {
+        margin-top: 10px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        height: auto;
+        width: auto;
+    }
+
+    .login-input{
+        height: 20px;
+        width: 140px;
     }
 }
 

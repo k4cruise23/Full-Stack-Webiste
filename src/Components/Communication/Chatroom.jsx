@@ -71,7 +71,7 @@ class Chatroom extends Component{
     }
 
     render(){
-        
+      
         const messages = this.state.messages.map((message, i) => (
             <div key={i} className={message.username === this.props.user.username ? 'my-message' : 'message'} >
                 {/* <h5>{message.username}</h5> */}
@@ -85,12 +85,12 @@ class Chatroom extends Component{
                 <div className="messages-container">
                     {messages}
                     {this.state.userTyping && (
-                        <h4 className="typing-messages">User Typing</h4>
+                        <h4 className="typing-messages">Typing...</h4>
                         )}
                 </div>
                 <div className="send-message">
                 <input type="text"  onChange={e => this.handleChange(e) } name={'message'} value={this.state.message} placeholder='Type message here' />
-                <button onClick={() => this.blast()} > Send</button>
+                <button onClick={() => this.blast()} >Send</button>
                 </div>
             </div>
             </div>

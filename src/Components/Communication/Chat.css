@@ -1,67 +1,141 @@
 
 
   .send-message{
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-  }
+    position: fixed;
+    bottom: 10px;
+    padding: 0 10px;
+}
 
-  .chatroom {
-      height: 100vh;
-      width: 70%;
-      background: white;
-      margin-top: 10px;
-  }
+.send-message > input {
+    min-height: 30px;
+    width: 50vw;
+    font-size: 1rem;
+    border-radius: 25px;
+}
 
-  .chatroom-parent {
-      display: flex;
-      justify-content: center;
-      background: #FAFAFA;
-  }
+.send-message > button {
+    width: 70px;
+    height: 25px;
+    border: none;
+    color:#494744;
+    background-image: -webkit-radial-gradient(50% -46%, circle, #737373, #403d39);
+    background-image: -o-radial-gradient(50% -46%, circle, #737373, #403d39);
+    background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
+    font-size: 14px;
+    outline: none;
+    color: white;
+    margin-left: 5px;
+}
 
-  .my-message {
-    width: 14em;
-    margin: auto;
-    background: rgb(133, 46, 221);
-    padding: 6px 1px;
-    text-align: center;
-    font-weight: 900;
-    color: black;
-    font-family: arial;
-    position: relative;
-    left: 14vw;
-    top: 3vh;
-    border-radius: 8px;
+.chatroom {
+    height: 100vh;
+    width: 70%;
+    background: white;
+    margin-top: 10px;
+}
+
+.chatroom-parent {
     display: flex;
     justify-content: center;
-    height: auto;
-    align-items: center;
-    background: rgb(148, 164, 255);
-    /* Fallback for older browsers without RGBA-support */
-    background: rgba(148, 173, 255, 0.781);
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    background: #FAFAFA;
+}
+
+.my-message {
+  width: 14em;
+  margin: auto;
+  background: rgb(133, 46, 221);
+  padding: 6px 1px;
+  text-align: center;
+  font-weight: 900;
+  color: black;
+  font-family: arial;
+  position: relative;
+  left: 14vw;
+  top: 3vh;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  background: rgb(148, 164, 255);
+  /* Fallback for older browsers without RGBA-support */
+  background: rgba(148, 173, 255, 0.781);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.my-message::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 16px solid transparent;
+	border-left-color: rgba(148, 173, 255, 0.781);
+	border-right: 0;
+	border-top: 0;
+	margin-top: -8px;
+	margin-right: -16px;
 }
 
 .message {
+  width: 14em;
+  margin: auto;
+  padding: 6px 1px;
+  text-align: center;
+  font-weight: 900;
+  color: black;
+  font-family: arial;
+  position: relative;
+  right: 14vw;
+  top: 3vh;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  align-items: center;
+  background: rgb(204, 204, 204);
+  /* Fallback for older browsers without RGBA-support */
+  background: rgba(204, 204, 204, 0.5);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.message::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 16px solid transparent;
+	border-right-color: rgba(204, 204, 204, 0.5);
+	border-left: 0;
+	border-top: 0;
+	margin-top: -8px;
+	margin-left: -16px;
+}
+
+.typing-messages {
     width: 14em;
     margin: auto;
     padding: 6px 1px;
-    text-align: center;
-    font-weight: 900;
-    color: black;
+    text-align: start;
+    color: rgb(168, 168, 168);
     font-family: arial;
     position: relative;
     right: 14vw;
     top: 3vh;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
     height: auto;
     align-items: center;
-    background: rgb(204, 204, 204);
-    /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+  }
+
+@media (max-width: 500px) {
+    .chatroom {
+        width: 100%;
+    }
+    .send-message {
+        right: 0;
+    }
 }
