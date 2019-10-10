@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {updatePosts} from '../../ducks/reducer'
 import './Form.css'
 
+
 class Form extends Component {
     constructor(){
         super()

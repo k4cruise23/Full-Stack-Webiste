@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha&display=swap');
+
 .header {
     display: flex;
     align-items: center;
@@ -5,6 +7,8 @@
     background-color: #00000088;
     color: white;
     height: 50px;
+    font-family: 'Neucha', cursive;
+    letter-spacing: 2px;
 }
 
 .links {
@@ -47,7 +51,7 @@
         align-items: center;
     }
     .farmers-markit {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
     }
 
 

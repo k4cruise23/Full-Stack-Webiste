@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import io from 'socket.io-client'
 import './Chat.css'
+import {connect} from 'react-redux'
 
 
-export default class Chatroom extends Component{
+class Chatroom extends Component{
     constructor(props){
         super(props)
 
@@ -52,32 +53,10 @@ export default class Chatroom extends Component{
     }
 
     updateMessages= data => {
-        console.log(data)
         this.setState({
             messages: [...this.state.messages, {message: data.message, username: data.username}]
         })
-    }
-
-    broadcast = () => {
-        this.socket.emit(
-            `broadcast to ${this.props.room !== 'global' ? 'room' : 'global'} socket`,
-            {
-                message: this.state.message,
-                username: this.state.username,
-                room: this.props.room
-            }
-        )
-    }
-
-    emit = () => {
-        this.socket.emit(
-            `emit to ${this.props.room !== 'global' ? 'room' : 'global'} socket`,
-            {
-                message: this.state.message,
-                username: this.state.username,
-                room: this.props.room
-            }
-        )
+        this.setState({message: '', userTyping: false})
     }
 
     blast = () => {
@@ -85,7 +64,7 @@ export default class Chatroom extends Component{
             `blast to room socket`,
             {
                 message: this.state.message,
-                username: this.state.username,
+                username: this.props.user.username,
                 room: this.props.room
             }
         )
@@ -94,8 +73,8 @@ export default class Chatroom extends Component{
     render(){
         
         const messages = this.state.messages.map((message, i) => (
-            <div key={i} className={message.username === this.state.username ? 'my-message' : 'message'} >
-                <h5>{message.username}</h5>
+            <div key={i} className={message.username === this.props.user.username ? 'my-message' : 'message'} >
+                {/* <h5>{message.username}</h5> */}
                 <p>{message.message}</p>
             </div>
         ))
@@ -119,3 +98,8 @@ export default class Chatroom extends Component{
     }
 
 }
+
+function mapStateToProps(reduxState) {
+    return reduxState
+}
+ export default connect(mapStateToProps, {})(Chatroom)

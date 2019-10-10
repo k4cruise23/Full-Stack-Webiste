@@ -77,7 +77,6 @@ class Dashboard extends Component {
     }
 
     render(){
-        // console.log(this.props)
         return(
             <div className="dashboard">
                 <div className="top-search-container">
