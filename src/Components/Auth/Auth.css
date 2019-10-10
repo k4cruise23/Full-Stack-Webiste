@@ -23,15 +23,14 @@
     letter-spacing: 2px;
 }
 
-
 .about-container {
-    height: 325px;
-    width: 275px;
+    height: 275px;
+    width: 250px;
     color: white;
     background: #00000088;
     margin-top: 40px;
-    padding: 5px;
     text-align: start;
+    padding: 5px;
 }
 
 .about-auth-container {
@@ -57,7 +56,7 @@
     width: 250px;
     background: white;
     box-shadow: 0 14px 28px 0 rgba(0,0,0,.25), 0 10px 10px 0 rgba(0,0,0,.26);
-    margin-top: 45px;
+    margin-top: 40px;
     background: #FAFAFA;
 }
 

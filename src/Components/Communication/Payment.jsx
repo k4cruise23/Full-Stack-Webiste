@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 
 export default class Payment extends Component {
@@ -19,15 +20,18 @@ export default class Payment extends Component {
     }
 
     onToken = token => {
-        console.log(token)
         let {amount} = this.state
-        amount /=100
         console.log(amount)
+        amount /=100
         token.card = void 0
         axios.post('/api/payment', {token, amount: this.state.amount})
         .then(res => {
-            console.log(res)
-            alert(`You donated ${amount}`)
+            Swal.fire(
+                'Good job!',
+                'Payment was successful!',
+                'success'
+              )
+            // alert(`You donated ${amount}`)
         })
     }
 

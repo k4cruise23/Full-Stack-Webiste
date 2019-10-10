@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {addUser} from '../../ducks/reducer'
 import './Auth.css'
 import * as Icon from 'react-feather'
+import Swal from 'sweetalert2'
 
 class Auth extends Component {
     constructor(){
@@ -39,6 +40,11 @@ class Auth extends Component {
         .then(res => {
             this.props.addUser(res.data)
             this.props.history.push('/dashboard')
+            Swal.fire(
+                'Good job!',
+                'You logged in!',
+                'success'
+              )
         })
     }
 
@@ -48,6 +54,11 @@ class Auth extends Component {
         .then(res => {
             this.props.addUser(res.data[0])
             this.props.history.push('/dashboard')
+            Swal.fire(
+                'Good job!',
+                'You have registered!',
+                'success'
+              )
         })
     }
 
