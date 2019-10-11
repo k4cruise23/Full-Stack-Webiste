@@ -138,4 +138,10 @@
     .send-message {
         right: 0;
     }
+    .my-message{
+        margin-top: 5px;
+    }
+    .message {
+        margin-top: 5px;
+    }
 }

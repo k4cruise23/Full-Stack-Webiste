@@ -41,6 +41,11 @@ class Dashboard extends Component {
             displayPosts: this.state.displayPosts,
             search: ''
         })
+        axios.get('/api/post/getAll').then(res => {
+            
+            this.setState({displayPosts: res.data})
+
+        })
     }
 
     deletePost = id => {
@@ -100,9 +105,7 @@ class Dashboard extends Component {
                             }
                                 </div>
                                 <div className="image">
-                                {this.state.edit ? <input className="post-image" type="text" value={this.state.image_url} onChange={(e) => this.handleInput(e, "image_url")} /> :
-                                <img className='post-image' src={el.image_url} alt=""/>
-                            }
+                                    <img className='post-image' src={el.image_url} alt=""/>
                                 </div>
                                 <div className="price">
                                 {this.state.edit ? <input className='post-price' type='text' value={this.state.price} onChange={(e) => this.handleInput(e, "price")} /> :
