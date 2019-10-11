@@ -27,7 +27,7 @@ class Nav extends Component{
                         <div className="header-parent">
                         <h1 className='farmers-markit' >Farmer's Markit 
                         </h1>
-                        <div className="down-arrow"><Icon.ArrowDown size='35' color='white' /></div>
+                        <div className="down-arrow"><Icon.ArrowDown size='31' color='white' /></div>
                         </div>
                         <div className="links">
                             <div className="link">

@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import './Payment.css'
+
 
 
 export default class Payment extends Component {
@@ -37,6 +39,7 @@ export default class Payment extends Component {
 
     render(){
         return(
+            <div className="stripe-parent">
             <div className="stripe">
                 <StripeCheckout
                 name='Pay'
@@ -52,7 +55,12 @@ export default class Payment extends Component {
                 closed={this.onClosed}
                 >
                 </StripeCheckout>
-                <input type="number" value={this.state.amount} onChange={e => this.setState({amount: +e.target.value})} />
+
+                <div className="input">
+                <input className='stripe-input' type="number" value={this.state.amount} onChange={e => this.setState({amount: +e.target.value})} />
+                <p className='stripe-p' >* You do not need to use a decimal.</p>
+                </div>
+            </div>
             </div>
         )
     }

@@ -45,7 +45,7 @@
 
 .post-image {
     height: auto;
-    width: 600px;
+    width: 598px;
 }
 
 .post {
@@ -97,13 +97,24 @@
     padding: 5px;
 }
 
+.edit-input {
+    height: 20px;
+    font-size: .9rem;
+}
+
+.edit-input-content {
+    height: 20px;
+    width: 90%;
+    font-size: .9rem;
+}
+
 @media (max-width: 600px) {
     .post{
         min-height: 300px;
         width: 400px;
     }
     .post-image{
-        width: 400px;
+        width: 398px;
     }
 }
 
@@ -113,7 +124,7 @@
         width: 300px;
     }
     .post-image{
-        width: 300px;
+        width: 298px;
     }
     .searchbar {
         margin-top: 5px;

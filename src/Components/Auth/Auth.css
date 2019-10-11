@@ -18,9 +18,8 @@
 }
 
 .help {
-    margin-right: 20px;
+    margin-right: 10px;
 }
-
 
 
 .header-parent > h1 {
@@ -138,7 +137,8 @@
     display: flex;
     justify-content: center;
     height: 40vh;
-    width: 100%
+    width: 100%;
+    margin-top: 20px;
 }
 
 .info {
@@ -159,6 +159,7 @@
     font-weight: 1;
     font-size: 1rem;
 }
+
 
 @media (max-width: 1000px){
     .info {
@@ -217,6 +218,12 @@
         height: 80vh;
         padding-bottom: 10px;
     }
+
+    .header-parent > h1 {
+        font-size: 1.6rem;
+        margin-left: 10px;
+    }
+
     .landing-parent{
         display: flex;
         flex-direction: column;

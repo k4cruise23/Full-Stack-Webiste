@@ -81,7 +81,7 @@ class Chatroom extends Component{
         return (
             <div className="chatroom-parent">
             <div className="chatroom">
-                <h2>Room: {this.props.room}</h2>
+                <h2>Start chatting!</h2>
                 <div className="messages-container">
                     {messages}
                     {this.state.userTyping && (

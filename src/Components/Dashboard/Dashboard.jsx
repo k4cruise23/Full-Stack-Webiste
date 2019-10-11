@@ -100,7 +100,7 @@ class Dashboard extends Component {
                         <div key={el.post_id} className='article-listing' >
                             <div className="post">
                                 <div className="item">
-                                {this.state.edit ? <input className='post-item' type='text' value={this.state.item} onChange={(e) => this.handleInput(e, "item")} /> :
+                                {this.state.edit ? <input className='edit-input' type='text' value={this.state.item} onChange={(e) => this.handleInput(e, "item")} /> :
                                 <p className="post-item">{el.item}</p>
                             }
                                 </div>
@@ -108,12 +108,12 @@ class Dashboard extends Component {
                                     <img className='post-image' src={el.image_url} alt=""/>
                                 </div>
                                 <div className="price">
-                                {this.state.edit ? <input className='post-price' type='text' value={this.state.price} onChange={(e) => this.handleInput(e, "price")} /> :
+                                {this.state.edit ? <input className='edit-input' type='text' value={this.state.price} onChange={(e) => this.handleInput(e, "price")} /> :
                                 <p className="post-price">{el.price}</p>
                             }
                                 </div>
                                 <div className="content">
-                                {this.state.edit ? <input className='post-content' type='text' value={this.state.content} onChange={(e) => this.handleInput(e, "content")} /> : 
+                                {this.state.edit ? <input className='edit-input-content' type='text' value={this.state.content} onChange={(e) => this.handleInput(e, "content")} /> : 
                                 <p className="post-content">{el.content}</p>
                             }
                                 </div>
@@ -123,7 +123,7 @@ class Dashboard extends Component {
                                 <Icon.XSquare onClick={() => this.deletePost(el.post_id)} color='black' size='40' className='icons' />
                                 <Icon.Edit onClick={() => this.editPost( el, false)} color='black' size='40' className='icons' />
                                 {this.state.edit ? 
-                                <button onClick={() => this.editPost( el, true)} >Cancel</button> :
+                                <Icon.X color='black' size='40' className='icons' onClick={() => this.editPost( el, true)} /> :
                                 null}
                                 </div>
                                 : null}
