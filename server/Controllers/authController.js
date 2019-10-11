@@ -4,7 +4,6 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET)
 module.exports = {
     async register(req, res) {
         const {username, password} = req.body
-        // console.log('hit')
         const db = req.app.get('db')
         const foundUser = await db.find_user(username)
         if(foundUser[0]) return res.status(200).send({message: 'Sorry, username is already taken'})
@@ -12,7 +11,6 @@ module.exports = {
         const passwordHash = bcrypt.hashSync(password, passwordSalt)
         const newUser = await db.register_user([username, passwordHash])
         delete newUser[0].passwordHash
-        // console.log('hit', req.session)
         req.session.user = newUser[0]
         res.status(200).send(newUser)
     }, 
@@ -47,10 +45,8 @@ module.exports = {
             },
             (err, charge) => {
                 if(err) {
-                    // console.log(err)
                     return res.status(500).send(err)
                 }else {
-                    // console.log('Successful Purchase', charge)
                     res.status(200).send({charge})
                 }
             }

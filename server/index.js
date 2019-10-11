@@ -27,22 +27,6 @@ const io = socket(server)
 io.on('connection', socket => {
     console.log('socket connected')
     
-    //global sockets
-    socket.on('broadcast to global socket', data => {
-        console.log('global broadcast hit')
-        socket.broadcast.emit('global response', data)
-    })
-    
-    socket.on('emit to global socket', data => {
-        console.log.log('global emit hit')
-        socket.emit('global response', data)
-    })
-    
-    socket.on('blast to global socket', data => {
-        console.log('global blast hit')
-        io.sockets.emit('global response', data)
-    })
-    
     socket.on('typing', data => {
         if (data.room !== 'global'){
             socket.to(data.room).broadcast.emit('typing')

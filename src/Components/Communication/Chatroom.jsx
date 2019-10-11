@@ -12,11 +12,9 @@ class Chatroom extends Component{
             messages: [],
             message: '',
             username: '',
-            usernameSet: '',
             userTyping: false
         }
         this.socket = io.connect(':5555')
-        this.socket.on('global response', data => this.updateMessages(data))
         this.socket.on('room response',  data => this.updateMessages(data))
         this.socket.on('typing', () => this.setTyping())
         this.socket.on('stopped typing', () => this.stopTyping())
@@ -36,12 +34,6 @@ class Chatroom extends Component{
                 this.socket.emit('stopped typing', {room: this.props.room})
             }
         })
-    }
-
-    setUsername = () => {
-        if (this.state.username) {
-            this.setState({usernameSet: true})
-        }
     }
 
     setTyping = () => {
