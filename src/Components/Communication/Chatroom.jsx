@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import io from 'socket.io-client'
 import './Chat.css'
 import {connect} from 'react-redux'
+require('dotenv').config()
+const {REACT_APP_SOCKET_CONNECT} = process.env
 
 
 class Chatroom extends Component{
@@ -14,7 +16,7 @@ class Chatroom extends Component{
             username: '',
             userTyping: false
         }
-        this.socket = io.connect(':5555')
+        this.socket = io.connect(REACT_APP_SOCKET_CONNECT)
         this.socket.on('room response',  data => this.updateMessages(data))
         this.socket.on('typing', () => this.setTyping())
         this.socket.on('stopped typing', () => this.stopTyping())
