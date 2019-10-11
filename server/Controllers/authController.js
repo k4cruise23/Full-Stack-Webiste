@@ -47,10 +47,10 @@ module.exports = {
             },
             (err, charge) => {
                 if(err) {
-                    console.log(err)
+                    // console.log(err)
                     return res.status(500).send(err)
                 }else {
-                    console.log('Successful Purchase', charge)
+                    // console.log('Successful Purchase', charge)
                     res.status(200).send({charge})
                 }
             }
