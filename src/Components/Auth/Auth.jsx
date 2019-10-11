@@ -5,7 +5,6 @@ import {addUser} from '../../ducks/reducer'
 import './Auth.css'
 import * as Icon from 'react-feather'
 import Swal from 'sweetalert2'
-import {Link} from 'react-router-dom'
 
 class Auth extends Component {
     constructor(){
@@ -74,7 +73,7 @@ class Auth extends Component {
                     <div className="header-icon"><Icon.ArrowDown size='35' color='white' /></div>
                     </div>
                     <div className="help">
-                    <Link to='/help' ><Icon.HelpCircle color='white' size='30' /></Link>
+                    <Icon.HelpCircle color='white' size='30' />
                     </div>
                 </header>
                 <div className="landing-parent">
@@ -122,6 +121,10 @@ class Auth extends Component {
                 </div>
                 </div>
                 </div>
+                <span className='about' >
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5> 
+                    <h5>Eum animi officia reprehenderit suscipit harum, quaerat ipsum ut vitae quibusdam nisi, nihil, expedita ea accusamus aut rerum a facilis. In, iste.</h5>                   
+                </span>
                 <div className="functions-container">
                     <div className="info">
                         <Icon.MessageSquare color='black' size='40' />
