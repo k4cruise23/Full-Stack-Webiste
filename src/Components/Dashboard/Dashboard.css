@@ -9,9 +9,16 @@
     background: #FAFAFA;
 }
 
-/* .profile-name {
-    font-weight: 1 !important;
-} */
+.welcome {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-name {
+    font-weight: 1;
+}
 
 .search-feature {
     display: flex;

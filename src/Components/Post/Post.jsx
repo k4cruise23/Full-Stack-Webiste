@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {selectPost} from '../../ducks/reducer'
 
+//! This component does absolutely nothing, but getting rid of it breaks the backend. Still working on removing it.//
+
 class Post extends Component{
 
     componentDidMount(){

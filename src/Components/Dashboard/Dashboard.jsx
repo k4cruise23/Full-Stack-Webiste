@@ -39,7 +39,7 @@ class Dashboard extends Component {
 
     resetSearch = () => {
         this.setState({
-            displayPosts: this.state.displayPosts,
+            // displayPosts: this.state.displayPosts,
             search: ''
         })
         axios.get('/api/post/getAll').then(res => {
@@ -51,9 +51,9 @@ class Dashboard extends Component {
 
     deletePost = id => {
         // console.log(id)
-        axios.delete(`/api/post/${id}`).then(res => {
-            this.setState({displayPosts: res.data})
-        })
+        // axios.delete(`/api/post/${id}`).then(res => {
+        //     this.setState({displayPosts: res.data})
+        // })
 
         Swal.fire({
             title: 'Are you sure?',
@@ -65,9 +65,12 @@ class Dashboard extends Component {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.value) {
+                axios.delete(`/api/post/${id}`).then(res => {
+                    this.setState({displayPosts: res.data})
+                })
               Swal.fire(
                 'Deleted!',
-                'Your file has been deleted.',
+                'Your post has been deleted.',
                 'success'
               )
             }
@@ -89,7 +92,7 @@ class Dashboard extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        const filteredPosts = this.state.displayPosts.filter(post => post.content.includes(e.target.value))
+        const filteredPosts = this.state.displayPosts.filter(post => post.content.includes(e.target.value.toLowerCase()))
         this.setState({
             displayPosts: filteredPosts
         })
@@ -101,13 +104,13 @@ class Dashboard extends Component {
     }
 
     render(){
-        // console.log(this.props)
+        
         return(
             <div className="dashboard">
                 <div className="top-search-container">
                     <div className="top-nav">
-                    <div className="profile-name">
-                            <h2>Welcome, {this.props.user.username}</h2>
+                    <div className="welcome">
+                            <h2 className='profile-name' >Welcome, {this.props.user.username}</h2>
                         </div>
                         <div className="search-feature">
                             <div className="search-container">
@@ -121,6 +124,7 @@ class Dashboard extends Component {
                     {this.state.displayPosts.length > 0 ? this.state.displayPosts.map(el=> (
                         
                         <div key={el.post_id} className='article-listing' >
+                            {/* {console.log(el)} */}
                             <div className="post">
                                 <div className="item">
                                 {this.state.edit ? <input className='edit-input' type='text' value={this.state.item} onChange={(e) => this.handleInput(e, "item")} /> :
@@ -150,6 +154,17 @@ class Dashboard extends Component {
                                 null}
                                 </div>
                                 : null}
+
+                                {this.props.user.user_id === el.user_id ? 
+                                <div className="adminButtons">
+                                <Icon.XSquare onClick={() => this.deletePost(el.post_id)} color='black' size='40' className='icons' />
+                                <Icon.Edit onClick={() => this.editPost( el, false)} color='black' size='40' className='icons' />
+                                {this.state.edit ? 
+                                <Icon.X color='black' size='40' className='icons' onClick={() => this.editPost( el, true)} /> :
+                                null}
+                                </div>
+                                : null}
+                                
                         <Link to={`/chat/${el.post_id}`} ><Icon.MessageSquare color='black' size='40' className='icons' /></Link>
                         <Link to={'/pay'}><Icon.CreditCard color='black' size='40' className='icons' /></Link>
                             </div>

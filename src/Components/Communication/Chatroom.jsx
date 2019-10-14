@@ -65,11 +65,13 @@ class Chatroom extends Component{
     }
 
     render(){
-      
+    //   console.log(this.props)
         const messages = this.state.messages.map((message, i) => (
             <div key={i} className={message.username === this.props.user.username ? 'my-message' : 'message'} >
-                {/* <h5>{message.username}</h5> */}
+                <div className="each-message">
+                <h5 className='message-username' >{message.username}</h5>
                 <p>{message.message}</p>
+                </div>
             </div>
         ))
         return (
