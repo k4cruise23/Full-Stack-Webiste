@@ -5,11 +5,18 @@ import {connect} from 'react-redux'
 import {reloadUser} from '../../ducks/reducer'
 import * as Icon from 'react-feather'
 import './nav.css'
+import Swal from 'sweetalert2'
 
 class Nav extends Component{
     
     logout = () => {
         axios.delete('/auth/logout')
+
+        Swal.fire(
+            'Good job!',
+            'You are logged out!',
+            'success'
+          )
     }
 
     componentDidMount(){
@@ -19,6 +26,7 @@ class Nav extends Component{
     }
 
     render(){
+        // console.log(this.props, 'nav')
         return(
             <div className="nav-container">
                 <div className="nav-bar-container">
@@ -37,12 +45,9 @@ class Nav extends Component{
                                 <Link to='/new' ><Icon.Plus color='white' className='icon' size='30' /></Link>
                             </div>
                             <div className="link">
-                                <Link to='/' ><Icon.Power color='white' className='icon' size='30' /></Link>
+                                <Link to='/' onClick={this.logout} ><Icon.Power color='white' className='icon' size='30' /></Link>
                             </div>
                         </div>
-                        </div>
-                        <div className="profile-name">
-                            <p>{this.props.user.username}</p>
                         </div>
                     </div>
                 </div>

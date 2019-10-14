@@ -5,6 +5,7 @@ import * as Icon from 'react-feather'
 import {searchUsers, addUser} from '../../ducks/reducer'
 import './Dashboard.css'
 import {Link} from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 class Dashboard extends Component {
     constructor(){
@@ -26,7 +27,7 @@ class Dashboard extends Component {
     }
 
     handleInput = (e, key) => {
-        console.log('showing katie cool things', e.target.value, key)
+        // console.log('showing katie cool things', e.target.value, key)
         this.setState({
             [key]: e.target.value
         })
@@ -53,6 +54,24 @@ class Dashboard extends Component {
         axios.delete(`/api/post/${id}`).then(res => {
             this.setState({displayPosts: res.data})
         })
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.value) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }
+          })
     }
 
     editPost = (el, cancel) => {
@@ -82,10 +101,14 @@ class Dashboard extends Component {
     }
 
     render(){
+        // console.log(this.props)
         return(
             <div className="dashboard">
                 <div className="top-search-container">
                     <div className="top-nav">
+                    <div className="profile-name">
+                            <h2>Welcome, {this.props.user.username}</h2>
+                        </div>
                         <div className="search-feature">
                             <div className="search-container">
                             <input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' />

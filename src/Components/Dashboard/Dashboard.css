@@ -9,6 +9,10 @@
     background: #FAFAFA;
 }
 
+/* .profile-name {
+    font-weight: 1 !important;
+} */
+
 .search-feature {
     display: flex;
     justify-content: flex-end;
