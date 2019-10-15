@@ -50,14 +50,9 @@ class Dashboard extends Component {
     }
 
     deletePost = id => {
-        // console.log(id)
-        // axios.delete(`/api/post/${id}`).then(res => {
-        //     this.setState({displayPosts: res.data})
-        // })
-
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "You won't be able to undo this!",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -114,7 +109,7 @@ class Dashboard extends Component {
                         </div>
                         <div className="search-feature">
                             <div className="search-container">
-                            <input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' />
+                            <input type="text" value={this.state.search} className='searchbar' name='search' onChange={this.handleSearchInput} placeholder='Search...' autoComplete="off" />
                             <button className='reset' onClick={this.resetSearch} >X</button>
                             </div>
                         </div>
@@ -127,7 +122,7 @@ class Dashboard extends Component {
                             {/* {console.log(el)} */}
                             <div className="post">
                                 <div className="item">
-                                {this.state.edit ? <input className='edit-input' type='text' value={this.state.item} onChange={(e) => this.handleInput(e, "item")} /> :
+                                {this.state.edit ? <input className='edit-input' type='text' value={el.item} onChange={(e) => this.handleInput(e, "item")} /> :
                                 <p className="post-item">{el.item}</p>
                             }
                                 </div>
@@ -135,12 +130,12 @@ class Dashboard extends Component {
                                     <img className='post-image' src={el.image_url} alt=""/>
                                 </div>
                                 <div className="price">
-                                {this.state.edit ? <input className='edit-input' type='text' value={this.state.price} onChange={(e) => this.handleInput(e, "price")} /> :
+                                {this.state.edit ? <input className='edit-input' type='text' value={el.price} onChange={(e) => this.handleInput(e, "price")} /> :
                                 <p className="post-price">{el.price}</p>
                             }
                                 </div>
                                 <div className="content">
-                                {this.state.edit ? <input className='edit-input-content' type='text' value={this.state.content} onChange={(e) => this.handleInput(e, "content")} /> : 
+                                {this.state.edit ? <input className='edit-input-content' type='text' value={el.content} onChange={(e) => this.handleInput(e, "content")} /> : 
                                 <p className="post-content">{el.content}</p>
                             }
                                 </div>

@@ -63,15 +63,6 @@ class Auth extends Component {
         })
     }
 
-    clickQuestion() {
-        const dropdown = document.querySelector('#dropdown')
-        if (dropdown.classList.contains('hide')) {
-            dropdown.classList.remove('hide')
-        } else {
-            dropdown.classList.add('hide')
-        }
-    }
-
     render(){
         const {username, password} = this.state
         return(
@@ -83,7 +74,7 @@ class Auth extends Component {
                     <div className="header-icon"><Icon.ArrowDown size='35' color='white' /></div>
                     </div>
                     <div className="help">
-                    <Link to='/about' ><Icon.HelpCircle color='white' size='30' /></Link>
+                    <Link to='/help' ><Icon.HelpCircle color='white' size='30' /></Link>
                     </div>
                 </header>
                 <div className="landing-parent">
@@ -131,10 +122,6 @@ class Auth extends Component {
                 </div>
                 </div>
                 </div>
-                {/* <span className='about' >
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5> 
-                    <h5>Eum animi officia reprehenderit suscipit harum, quaerat ipsum ut vitae quibusdam nisi, nihil, expedita ea accusamus aut rerum a facilis. In, iste.</h5>                   
-                </span> */}
                 <div className="functions-container">
                     <div className="info">
                         <Icon.MessageSquare color='black' size='40' />
@@ -155,7 +142,6 @@ class Auth extends Component {
             </div>
         )
     }
-
 
 }
 

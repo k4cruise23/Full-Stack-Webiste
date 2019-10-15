@@ -9,7 +9,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-      {this.props.location.pathname === '/' || this.props.location.pathname === '/about' ? null : <Nav />}
+      {this.props.location.pathname === '/' || this.props.location.pathname === '/help' ? null : <Nav />}
       {routes}
     </div>
     )
