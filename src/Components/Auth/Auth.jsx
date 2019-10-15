@@ -42,9 +42,8 @@ class Auth extends Component {
             this.props.addUser(res.data)
             this.props.history.push('/dashboard')
             Swal.fire(
-                'Good job!',
-                'You logged in!',
-                'success'
+                {type: 'success',
+                title: 'You have been logged in!'}
               )
         })
     }
@@ -56,9 +55,8 @@ class Auth extends Component {
             this.props.addUser(res.data[0])
             this.props.history.push('/dashboard')
             Swal.fire(
-                'Good job!',
-                'You have registered!',
-                'success'
+                {type: 'success',
+                title: 'You are a registered user!'}
               )
         })
     }

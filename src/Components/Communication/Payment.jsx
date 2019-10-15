@@ -29,15 +29,15 @@ export default class Payment extends Component {
         axios.post('/api/payment', {token, amount: this.state.amount})
         .then(res => {
             Swal.fire(
-                'Good job!',
-                'Payment was successful!',
-                'success'
+                {type: 'success',
+                title: 'Payment was successful!'}
               )
             // alert(`You donated ${amount}`)
         })
     }
 
     render(){
+        // console.log(this.props)
         return(
             <div className="stripe-parent">
             <div className="stripe">
