@@ -57,7 +57,7 @@ export default class Payment extends Component {
                 </StripeCheckout>
 
                 <div className="input">
-                <input className='stripe-input' type="number" value={this.state.amount} onChange={e => this.setState({amount: +e.target.value})} />
+                <input placeholder='Enter amount here' className='stripe-input' type="number" value={this.state.amount} onChange={e => this.setState({amount: +e.target.value})} />
                 <p className='stripe-p' >* You do not need to use a decimal.</p>
                 </div>
             </div>

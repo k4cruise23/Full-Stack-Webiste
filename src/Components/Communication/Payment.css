@@ -11,11 +11,13 @@
 
 .stripe-input {
   width: 150px;
+  height: 25px;
+  font-size: .9rem;
 }
 
 .stripe-p {
   color: white;
-  font-size: .4rem;
+  font-size: .8rem;
   margin-top: 5px;
 }
 
